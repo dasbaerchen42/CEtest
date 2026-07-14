@@ -190,3 +190,9 @@ body.aud-school .rf-quote { border-left-color: var(--deep); }
   .rf-scene--panel > .rf-panel { width: calc(100% - 20px); }
   .rf-hero-actions { flex-direction: column; align-items: stretch; }
 }
+
+/* ---- 主 CTA＝路徑橙填色（提案規格；aud-company 覆寫為深綠） ---- */
+.rf .button-primary { background: var(--path); border-color: var(--path); color: #10230a; }
+.rf .button-primary:hover, .rf .button-primary:focus-visible { background: var(--sunset); border-color: var(--sunset); color: #10230a; }
+body.aud-company .rf .button-primary { background: var(--deep); border-color: var(--deep); color: #fff; }
+body.aud-company .rf .button-primary:hover, body.aud-company .rf .button-primary:focus-visible { background: var(--leaf-700); border-color: var(--leaf-700); color: #fff; }
