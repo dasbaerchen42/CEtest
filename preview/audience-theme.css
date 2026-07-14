@@ -1,0 +1,88 @@
+/* ============================================================
+   audience-theme.css — 分眾色彩系統主題層（2026-07-14 提案 preview）
+   疊在 styles.css 之後載入。只加不改：全部規則掛在 body.aud-* 或
+   .phk-aud-* 之下，移除本檔＝完全回退。
+   色彩全數取自 v3 allowlist，未新增色票。
+   生態系對應：學生＝嫩芽(leaf)／學校＝樹(deep)／企業＝果實(path)／捐款人＝陽光(sun)
+   ============================================================ */
+
+/* ---- 分眾 token ---- */
+body.aud-student { --aud: var(--leaf);  --aud-strong: var(--brand-green); --aud-soft: rgba(142, 196, 87, 0.16); }
+body.aud-school  { --aud: var(--deep);  --aud-strong: var(--leaf-700);    --aud-soft: rgba(61, 85, 39, 0.09); }
+body.aud-company { --aud: var(--path);  --aud-strong: var(--sunset);      --aud-soft: rgba(242, 140, 10, 0.13); }
+body.aud-donor   { --aud: var(--sun);   --aud-strong: var(--wheat);       --aud-soft: var(--butter); }
+
+/* ---- phk 單色系色塊群（幾何沿用 phk-audiences，色相＝分眾參數） ---- */
+.phk-aud-student .phk-b1 { left: 0; top: 34px;  width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 0 22px 22px 0; background: linear-gradient(90deg, rgba(142, 196, 87, 0.46), rgba(142, 196, 87, 0.28)); }
+.phk-aud-student .phk-b2 { left: 0; top: 112px; width: clamp(190px, 22vw, 300px); height: 66px; border-radius: 0 22px 22px 0; background: linear-gradient(90deg, rgba(79, 159, 29, 0.30), rgba(79, 159, 29, 0.18)); }
+.phk-aud-student .phk-b3 { right: 0; top: 34px;  width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 22px 0 0 22px; background: linear-gradient(270deg, rgba(142, 196, 87, 0.5), rgba(142, 196, 87, 0.3)); }
+.phk-aud-student .phk-b4 { right: 0; top: 112px; width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 22px 0 0 22px; background: linear-gradient(270deg, rgba(255, 240, 196, 0.8), rgba(255, 240, 196, 0.5)); }
+
+.phk-aud-school .phk-b1 { left: 0; top: 34px;  width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 0 22px 22px 0; background: linear-gradient(90deg, rgba(61, 85, 39, 0.82), rgba(61, 85, 39, 0.62)); }
+.phk-aud-school .phk-b2 { left: 0; top: 112px; width: clamp(190px, 22vw, 300px); height: 66px; border-radius: 0 22px 22px 0; background: linear-gradient(90deg, rgba(78, 135, 24, 0.36), rgba(78, 135, 24, 0.22)); }
+.phk-aud-school .phk-b3 { right: 0; top: 34px;  width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 22px 0 0 22px; background: linear-gradient(270deg, rgba(61, 85, 39, 0.72), rgba(61, 85, 39, 0.5)); }
+.phk-aud-school .phk-b4 { right: 0; top: 112px; width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 22px 0 0 22px; background: linear-gradient(270deg, rgba(142, 196, 87, 0.34), rgba(142, 196, 87, 0.2)); }
+
+.phk-aud-company .phk-b1 { left: 0; top: 34px;  width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 0 22px 22px 0; background: linear-gradient(90deg, rgba(242, 140, 10, 0.4), rgba(242, 140, 10, 0.24)); }
+.phk-aud-company .phk-b2 { left: 0; top: 112px; width: clamp(190px, 22vw, 300px); height: 66px; border-radius: 0 22px 22px 0; background: linear-gradient(90deg, rgba(232, 115, 40, 0.34), rgba(232, 115, 40, 0.2)); }
+.phk-aud-company .phk-b3 { right: 0; top: 34px;  width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 22px 0 0 22px; background: linear-gradient(270deg, rgba(242, 140, 10, 0.44), rgba(242, 140, 10, 0.26)); }
+.phk-aud-company .phk-b4 { right: 0; top: 112px; width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 22px 0 0 22px; background: linear-gradient(270deg, rgba(253, 210, 166, 0.75), rgba(253, 210, 166, 0.45)); }
+
+.phk-aud-donor .phk-b1 { left: 0; top: 34px;  width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 0 22px 22px 0; background: linear-gradient(90deg, rgba(252, 224, 140, 0.75), rgba(252, 224, 140, 0.5)); }
+.phk-aud-donor .phk-b2 { left: 0; top: 112px; width: clamp(190px, 22vw, 300px); height: 66px; border-radius: 0 22px 22px 0; background: linear-gradient(90deg, rgba(245, 182, 45, 0.44), rgba(245, 182, 45, 0.28)); }
+.phk-aud-donor .phk-b3 { right: 0; top: 34px;  width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 22px 0 0 22px; background: linear-gradient(270deg, rgba(245, 182, 45, 0.5), rgba(245, 182, 45, 0.32)); }
+.phk-aud-donor .phk-b4 { right: 0; top: 112px; width: clamp(160px, 19vw, 250px); height: 66px; border-radius: 22px 0 0 22px; background: linear-gradient(270deg, rgba(255, 240, 196, 0.9), rgba(255, 240, 196, 0.6)); }
+
+/* 上塊疊下塊（沿用 phk 交疊通則） */
+.phk-aud-student .phk-b3, .phk-aud-school .phk-b3, .phk-aud-company .phk-b3, .phk-aud-donor .phk-b3 { z-index: 2; }
+
+/* 深色塊上的標題維持深綠（school 左上塊避開文案區，不需反白） */
+.phk-aud-student h1, .phk-aud-school h1, .phk-aud-company h1, .phk-aud-donor h1 { color: var(--deep); }
+
+/* ---- 金線轉角＋金圓點（首頁 hero 語言，四路徑恆定＝品牌辨識層） ---- */
+.phk .phk-gold {
+  position: absolute; right: clamp(20px, 6vw, 110px); top: 16px;
+  width: clamp(110px, 13vw, 170px); height: 82px;
+  border-top: 3px solid var(--wheat); border-right: 3px solid var(--wheat);
+  border-top-right-radius: 26px; z-index: 2; pointer-events: none;
+}
+.phk .phk-gold::before {
+  content: ""; position: absolute; left: -6px; top: -7px;
+  width: 11px; height: 11px; border-radius: 50%; background: var(--wheat);
+}
+
+/* ---- 價值主張 h1（原導覽名退到膠囊＋麵包屑） ---- */
+.phk .phk-pill {
+  display: inline-block; margin: 0 0 14px; padding: 4px 14px;
+  border-radius: 999px; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.05em; color: var(--deep);
+  background: var(--aud); border: 1px solid rgba(61, 85, 39, 0.14);
+}
+body.aud-school .phk-pill { color: #fff; }
+.phk h1.phk-vp { font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.35; max-width: 21em; }
+
+/* ---- 分眾細節：kicker 編號、標題帶、章節導覽高亮 ---- */
+body[class*="aud-"] .phk .phk-bar { background: var(--aud-strong); }
+body[class*="aud-"] .section-kicker span { color: var(--aud-strong); }
+body[class*="aud-"] .exit-sign.is-active::before { background: var(--aud-strong); }
+body[class*="aud-"] .exit-sign.is-active .exit-arrow { color: var(--aud-strong); }
+body[class*="aud-"] .exit-sign.is-active::after { border-color: var(--aud-soft); }
+
+/* ---- CTA 例外規則 ----
+   企業頁：路徑橙是全站主 CTA 色，在橘色系頁面會沉底 → 主鈕改深綠填色。 */
+body.aud-company .button-primary {
+  background: var(--deep); color: #fff; border-color: var(--deep);
+}
+body.aud-company .button-primary:hover,
+body.aud-company .button-primary:focus-visible {
+  background: var(--leaf-700); border-color: var(--leaf-700); color: #fff;
+}
+/* 捐款頁：大面積用 sun/butter，線條與底線一律 wheat（同色系深一階保對比） */
+body.aud-donor .signal-row strong { color: var(--deep); }
+
+/* ---- preview 提示帶（正式上線時整段移除） ---- */
+.preview-note {
+  background: var(--deep); color: #fff; font-size: 0.78rem;
+  text-align: center; padding: 8px 16px; letter-spacing: 0.04em;
+}
+.preview-note a { color: var(--sun); font-weight: 700; }
