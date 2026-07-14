@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分眾色彩系統・第一波改版示意｜鄉育教育基金會</title>
+<style>
+:root {
+  /* v3 allowlist（與正式站 styles.css 同步） */
+  --leaf: #8ec457; --brand-green: #4f9f1d; --leaf-700: #4e8718; --deep: #3d5527;
+  --butter: #fff0c3; --sun: #fce08c; --amber: #f8cd5f; --wheat: #f5b62d;
+  --apricot: #fdd2a6; --peach: #fbb05b; --path: #f28c0a; --sunset: #e87328;
+  --honey: #fbefd9; --earth: #987459;
+  --ink: #3d5527; --muted: rgba(61,85,39,.85); --line: rgba(152,116,89,.32);
+  --card-radius: 22px;
+  --font: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); color: var(--ink); background: #fff; line-height: 1.7; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+/* ===== 提案頁自身的版面 ===== */
+.proposal-hero { padding: 72px 0 48px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+.proposal-hero .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; color: var(--earth); text-transform: uppercase; }
+.proposal-hero h1 { font-size: 2.2rem; line-height: 1.3; margin: 12px 0 14px; }
+.proposal-hero p.lead { max-width: 640px; color: var(--muted); }
+.hero-blocks { position: absolute; right: 28px; top: 56px; display: flex; gap: 12px; }
+.hero-blocks span { width: 64px; height: 96px; border-radius: var(--card-radius); display: block; }
+.hero-blocks span:nth-child(1) { background: var(--leaf); height: 72px; align-self: flex-end; }
+.hero-blocks span:nth-child(2) { background: var(--deep); }
+.hero-blocks span:nth-child(3) { background: var(--path); height: 80px; align-self: flex-end; }
+.hero-blocks span:nth-child(4) { background: var(--sun); height: 60px; }
+
+section.block { padding: 64px 0; }
+section.block + section.block { border-top: 1px solid var(--line); }
+.sec-eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .1em; color: var(--earth); text-transform: uppercase; }
+h2.sec-title { font-size: 1.6rem; margin: 8px 0 10px; }
+p.sec-lead { max-width: 680px; color: var(--muted); margin-bottom: 34px; }
+.note { font-size: .85rem; color: var(--earth); margin-top: 14px; }
+
+/* ===== 生態系四色卡 ===== */
+.eco-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.eco-card { border-radius: var(--card-radius); padding: 24px 20px 20px; border: 1px solid var(--line); position: relative; overflow: hidden; background: #fff; }
+.eco-card .swatch { width: 46px; height: 46px; border-radius: 14px; margin-bottom: 14px; }
+.eco-card h3 { font-size: 1.05rem; margin-bottom: 2px; }
+.eco-card .meta { font-size: .78rem; color: var(--earth); letter-spacing: .04em; margin-bottom: 8px; }
+.eco-card p { font-size: .88rem; color: var(--muted); }
+.eco-card::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; }
+.eco-card.c-student::after { background: var(--leaf); }
+.eco-card.c-school::after { background: var(--deep); }
+.eco-card.c-company::after { background: var(--path); }
+.eco-card.c-donor::after { background: var(--sun); }
+.eco-card.c-student .swatch { background: var(--leaf); }
+.eco-card.c-school .swatch { background: var(--deep); }
+.eco-card.c-company .swatch { background: var(--path); }
+.eco-card.c-donor .swatch { background: var(--sun); }
+.eco-story { margin-top: 26px; background: var(--honey); border-radius: var(--card-radius); padding: 22px 26px; font-size: .95rem; }
+
+/* ===== 三層系統 ===== */
+.layers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.layer { border: 1px solid var(--line); border-radius: var(--card-radius); padding: 24px 22px; }
+.layer .tag { display: inline-block; font-size: .72rem; font-weight: 700; padding: 3px 12px; border-radius: 999px; background: var(--deep); color: #fff; margin-bottom: 12px; }
+.layer h3 { font-size: 1rem; margin-bottom: 6px; }
+.layer p { font-size: .87rem; color: var(--muted); }
+.layer .chips { display: flex; gap: 6px; margin-top: 14px; }
+.layer .chips i { width: 22px; height: 22px; border-radius: 8px; display: block; }
+
+/* ===== 首頁路牌 before / after ===== */
+.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.ba-col { border: 1px solid var(--line); border-radius: var(--card-radius); padding: 24px; }
+.ba-col .ba-label { font-size: .75rem; font-weight: 700; letter-spacing: .08em; color: var(--earth); margin-bottom: 16px; }
+.ba-col.after { background: linear-gradient(180deg, rgba(142,196,87,.10), rgba(142,196,87,.04)); }
+.signposts { display: grid; gap: 12px; }
+.signpost { background: #fff; border-radius: 14px; box-shadow: 0 9px 22px rgba(61,85,39,.12); padding: 14px 16px; display: flex; align-items: center; gap: 14px; position: relative; }
+.signpost::after { content: ""; position: absolute; right: -9px; top: 50%; translate: 0 -50%; border: 10px solid transparent; border-left-color: #fff; border-right: none; filter: drop-shadow(2px 0 1px rgba(61,85,39,.06)); }
+.signpost .pill { font-size: .7rem; font-weight: 700; padding: 3px 11px; border-radius: 999px; color: var(--deep); border: 1px solid rgba(61,85,39,.14); white-space: nowrap; }
+.signpost .sp-title { font-size: .92rem; font-weight: 700; flex: 1; }
+.signpost .sp-cta { font-size: .78rem; font-weight: 700; padding-bottom: 2px; border-bottom: 2px solid; white-space: nowrap; }
+
+/* ===== 分眾路徑段（單色變體示意） ===== */
+.path-head { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+.path-head .dot { width: 30px; height: 30px; border-radius: 10px; }
+.path-head h2 { font-size: 1.45rem; }
+.path-meta { font-size: .85rem; color: var(--earth); margin-bottom: 28px; }
+.mockups { display: grid; gap: 30px; }
+
+/* 瀏覽器框 */
+.browser { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: 0 14px 36px rgba(61,85,39,.08); background: #fff; }
+.browser-bar { display: flex; align-items: center; gap: 8px; padding: 9px 14px; background: var(--honey); border-bottom: 1px solid var(--line); }
+.browser-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(152,116,89,.35); display: block; }
+.browser-bar .url { font-size: .72rem; color: var(--earth); margin-left: 10px; letter-spacing: .02em; }
+
+/* mini-hero：承接首頁 rhero 的圓角色塊＋金線語言，色相＝分眾參數 */
+.mini-hero { position: relative; padding: 44px 44px 40px; overflow: hidden; min-height: 240px; }
+.mh-copy { position: relative; z-index: 2; max-width: 62%; }
+.mh-crumb { font-size: .74rem; color: var(--earth); margin-bottom: 14px; }
+.mh-crumb b { color: var(--ink); font-weight: 400; }
+.mh-pill { display: inline-block; font-size: .72rem; font-weight: 700; padding: 4px 13px; border-radius: 999px; color: var(--deep); border: 1px solid rgba(61,85,39,.14); margin-bottom: 12px; }
+.mini-hero h1 { font-size: 1.55rem; line-height: 1.35; margin-bottom: 10px; }
+.mini-hero .mh-lead { font-size: .88rem; color: var(--muted); margin-bottom: 20px; }
+.mh-cta { display: inline-block; font-size: .84rem; font-weight: 700; padding: 10px 22px; border-radius: 999px; text-decoration: none; }
+/* 右側色塊群＝首頁 rhero 色塊的單色系變體 */
+.mh-decor { position: absolute; right: 40px; top: 36px; bottom: 36px; display: flex; align-items: flex-end; gap: 12px; z-index: 1; }
+.mh-decor span { border-radius: var(--card-radius); display: block; }
+.mh-decor .b1 { width: 74px; height: 62%; }
+.mh-decor .b2 { width: 52px; height: 88%; }
+.mh-decor .b3 { width: 64px; height: 46%; }
+/* 金線轉角＋金圓點（首頁 hero 語言，全路徑恆定） */
+.mh-corner { position: absolute; right: 24px; top: 20px; width: 120px; height: 74px; border-top: 3px solid var(--wheat); border-right: 3px solid var(--wheat); border-top-right-radius: 26px; z-index: 1; }
+.mh-corner::before { content: ""; position: absolute; left: -5px; top: -7px; width: 11px; height: 11px; border-radius: 50%; background: var(--wheat); }
+/* 頁內延續示意：色帶＋膠囊 */
+.mh-below { display: flex; gap: 10px; padding: 0 44px 30px; align-items: center; }
+.mh-below .band { flex: 1; height: 34px; border-radius: 12px; }
+.mh-below .cap { font-size: .72rem; color: var(--earth); white-space: nowrap; }
+
+/* 全光譜導流條（共用頁結尾元件示意） */
+.flow-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 18px; }
+.flow-strip a { display: block; text-decoration: none; color: var(--deep); border-radius: 14px; padding: 14px 16px; font-size: .82rem; font-weight: 700; }
+.flow-strip a small { display: block; font-weight: 400; font-size: .72rem; opacity: .75; }
+</style>
+</head>
+<body>
+
+<header class="proposal-hero">
+  <div class="wrap">
+    <div class="hero-blocks" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <p class="eyebrow">Design Proposal・2026-07</p>
+    <h1>分眾色彩系統<br>第一波改版示意</h1>
+    <p class="lead">以「一棵樹的生態系」為敘事骨架，用四個品牌色編碼四條分眾路徑：首頁路牌是入口，子頁面承接同一色系與首頁的圓角色塊、金線語言——解決首頁與子頁風格斷層，同時建立視覺導流。</p>
+    <p style="margin-top:18px;font-size:.9rem"><strong>四頁完整實作預覽：</strong>
+      <a href="preview/for-students.html" style="color:var(--brand-green);font-weight:700">大學生</a>・
+      <a href="preview/for-universities.html" style="color:var(--deep);font-weight:700">學校</a>・
+      <a href="preview/for-companies.html" style="color:var(--path);font-weight:700">企業</a>・
+      <a href="preview/for-donors.html" style="color:var(--wheat);font-weight:700">捐款人</a>
+    </p>
+  </div>
+</header>
+
+<section class="block" id="eco">
+  <div class="wrap">
+    <p class="sec-eyebrow">01・色彩邏輯</p>
+    <h2 class="sec-title">四個分眾，一棵樹的生態系</h2>
+    <p class="sec-lead">四色皆取自現行品牌色 allowlist（v3），不新增任何色票。顏色不是任意指派——每個分眾是同一個教育生態系的一部分。</p>
+    <div class="eco-grid">
+      <div class="eco-card c-student">
+        <div class="swatch"></div>
+        <h3>大學生</h3>
+        <p class="meta">嫩葉綠 --leaf #8ec457</p>
+        <p>嫩芽——正在生長的人。承接 Logo 主色，站在生態系的中心。</p>
+      </div>
+      <div class="eco-card c-school">
+        <div class="swatch"></div>
+        <h3>合作學校</h3>
+        <p class="meta">深林綠 --deep #3d5527</p>
+        <p>樹的本體——結構與支撐。嫩芽在樹上生長，方法在課堂裡扎根。</p>
+      </div>
+      <div class="eco-card c-company">
+        <div class="swatch"></div>
+        <h3>合作企業</h3>
+        <p class="meta">路徑橙 --path #f28c0a</p>
+        <p>果實——成果與收穫。真實場域讓能力結果，企業收穫未來人才。</p>
+      </div>
+      <div class="eco-card c-donor">
+        <div class="swatch"></div>
+        <h3>捐款人</h3>
+        <p class="meta">暖陽黃 --sun #fce08c</p>
+        <p>陽光——讓一切發生的能量。每筆支持都是照進生態系的光。</p>
+      </div>
+    </div>
+    <div class="eco-story">
+      <strong>一句話講完這套系統：</strong>陽光（捐款人）照進來，嫩芽（大學生）在樹（學校）的結構上生長，最後結成果實（企業與青年互相成就）。四個顏色缺一角，生態系就不完整——這句話同時是色彩規則的出處，也是分眾頁互相連結時的文案骨架。
+    </div>
+  </div>
+</section>
+
+<section class="block" id="layers">
+  <div class="wrap">
+    <p class="sec-eyebrow">02・三層規則</p>
+    <h2 class="sec-title">辨識感怎麼不散掉：恆定層＋全光譜＋單色</h2>
+    <p class="sec-lead">品牌識別的載體不是某一個顏色，而是每頁不變的形狀語言。變的只有一個色相參數（--audience-accent）。</p>
+    <div class="layers">
+      <div class="layer">
+        <span class="tag">恆定層・每一頁</span>
+        <h3>白底＋深綠內文＋22px 圓角＋金線</h3>
+        <p>全站不論染什麼色，字體、圓角形狀、線條、版型節奏完全一致——像地鐵路線圖：每條線顏色不同，沒人覺得是兩家公司。</p>
+        <div class="chips"><i style="background:#fff;border:1px solid var(--line)"></i><i style="background:var(--deep)"></i><i style="background:var(--wheat)"></i></div>
+      </div>
+      <div class="layer">
+        <span class="tag">全光譜・共用頁</span>
+        <h3>四色並置＝屬於所有人</h3>
+        <p>首頁與 impact、outcomes 等證據頁用四色並置的色塊群，宣告「這是大家共同的成果」，並以四色導流條把讀者送回各自路徑。</p>
+        <div class="chips"><i style="background:var(--leaf)"></i><i style="background:var(--deep)"></i><i style="background:var(--path)"></i><i style="background:var(--sun)"></i></div>
+      </div>
+      <div class="layer">
+        <span class="tag">單色・分眾路徑頁</span>
+        <h3>一頁一色，佔比一至三成</h3>
+        <p>主題色只接管固定槽位：mini-hero 色塊與線條、色帶、膠囊、CTA 底線。底色維持白、內文維持深綠，不做整頁滿版色。</p>
+        <div class="chips"><i style="background:var(--path)"></i><i style="background:#fff;border:1px solid var(--line)"></i><i style="background:#fff;border:1px solid var(--line)"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="homepage">
+  <div class="wrap">
+    <p class="sec-eyebrow">03・首頁分眾入口</p>
+    <h2 class="sec-title">路牌改色：現行 vs 生態系對應</h2>
+    <p class="sec-lead">現行四張路牌的指向色是「綠・金・橙・赤」，兩個橙色相鄰難以區分，且與分眾語意無關。改版後每張牌的顏色＝走進去那條路徑的顏色。</p>
+    <div class="ba-grid">
+      <div class="ba-col">
+        <p class="ba-label">BEFORE・現行（色彩無語意）</p>
+        <div class="signposts">
+          <div class="signpost"><span class="pill" style="background:var(--sun)">大學生</span><span class="sp-title">尋路計畫 Pathfinder</span><span class="sp-cta" style="border-color:var(--leaf-700)">了解課程</span></div>
+          <div class="signpost"><span class="pill" style="background:var(--apricot)">大專院校</span><span class="sp-title">課程與研究合作</span><span class="sp-cta" style="border-color:var(--wheat)">合作方案</span></div>
+          <div class="signpost"><span class="pill" style="background:var(--amber)">企業</span><span class="sp-title">公益合作・人才布局</span><span class="sp-cta" style="border-color:var(--path)">企業專區</span></div>
+          <div class="signpost"><span class="pill" style="background:var(--butter)">捐款人</span><span class="sp-title">支持青年尋路</span><span class="sp-cta" style="border-color:var(--sunset)">支持我們</span></div>
+        </div>
+      </div>
+      <div class="ba-col after">
+        <p class="ba-label">AFTER・生態系四色（入口色＝目的地色）</p>
+        <div class="signposts">
+          <div class="signpost"><span class="pill" style="background:var(--leaf)">大學生・嫩芽</span><span class="sp-title">尋路計畫 Pathfinder</span><span class="sp-cta" style="border-color:var(--leaf)">了解課程</span></div>
+          <div class="signpost"><span class="pill" style="background:var(--deep);color:#fff">學校・樹</span><span class="sp-title">課程與研究合作</span><span class="sp-cta" style="border-color:var(--deep)">合作方案</span></div>
+          <div class="signpost"><span class="pill" style="background:var(--path)">企業・果實</span><span class="sp-title">公益合作・人才布局</span><span class="sp-cta" style="border-color:var(--path)">企業專區</span></div>
+          <div class="signpost"><span class="pill" style="background:var(--sun)">捐款人・陽光</span><span class="sp-title">支持青年尋路</span><span class="sp-cta" style="border-color:var(--wheat)">支持我們</span></div>
+        </div>
+        <p class="note">黃色路牌的 CTA 底線用麥穗黃（--wheat）而非暖陽黃：暖陽黃在白底上對比不足，同色系內深一階是既定的無障礙規則。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="path-student">
+  <div class="wrap">
+    <p class="sec-eyebrow">04・分眾路徑示意（各頁 mini-hero）</p>
+    <div class="path-head"><span class="dot" style="background:var(--leaf)"></span><h2>嫩芽・大學生路徑</h2></div>
+    <p class="path-meta">for-students → programs｜主色 --leaf｜h1 升級為價值主張句，原導覽名退到膠囊與麵包屑</p>
+    <div class="mockups">
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/for-students</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--leaf)"></span><span class="b2" style="background:var(--brand-green)"></span><span class="b3" style="background:var(--butter)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 分眾專區 ／ <b>大學生</b></p>
+            <span class="mh-pill" style="background:var(--leaf)">大學生專區・For Students</span>
+            <h1>面對升學、就業與創業，<br>你需要的不是標準答案。</h1>
+            <p class="mh-lead">真正稀缺的不再是答案，而是一套能反覆使用的判斷與行動能力。尋路計畫陪你練的，就是這件事。</p>
+            <a class="mh-cta" style="background:var(--path);color:#000">了解尋路計畫 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:rgba(142,196,87,.16)"></span><span class="cap">頁內色帶＝嫩葉綠 tint，一頁單一色系</span></div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/programs</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--brand-green)"></span><span class="b2" style="background:var(--leaf)"></span><span class="b3" style="background:var(--butter)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 專案計畫 ／ <b>大學生職涯賦能</b></p>
+            <span class="mh-pill" style="background:var(--leaf)">尋路計畫 Pathfinder</span>
+            <h1>面對選擇，青年最常卡在<br>「不知道怎麼開始」。</h1>
+            <p class="mh-lead">三大模組 × 16 週，從覺察、探索到行動，一條可反覆使用的尋路路徑。</p>
+            <a class="mh-cta" style="background:var(--path);color:#000">如何加入 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:rgba(142,196,87,.16)"></span><span class="cap">從專區點進來，色系不變＝路徑感連續</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="block" id="path-school">
+  <div class="wrap">
+    <div class="path-head"><span class="dot" style="background:var(--deep)"></span><h2>樹・合作學校路徑</h2></div>
+    <p class="path-meta">for-universities → university-partnership → program-educator｜主色 --deep｜全站唯一用「大面積深綠色塊」的路徑——別頁深綠只當文字，這裡當結構，靠用法辨識</p>
+    <div class="mockups">
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/for-universities</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--deep);width:92px;height:92%"></span><span class="b2" style="background:var(--leaf-700);width:44px"></span><span class="b3" style="background:var(--butter)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 分眾專區 ／ <b>大專院校</b></p>
+            <span class="mh-pill" style="background:var(--deep);color:#fff;border-color:var(--deep)">大專院校專區・For Universities</span>
+            <h1>與學校共備，<br>把尋路的方法帶進課堂。</h1>
+            <p class="mh-lead">不是把外來課程搬進校園，而是與老師一起共備，把能力訓練融進既有的選修與生涯課程裡。</p>
+            <a class="mh-cta" style="background:var(--path);color:#000">預約說明會 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:rgba(61,85,39,.09)"></span><span class="cap">深綠 tint 色帶（9% 透明度，維持可讀性）</span></div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/university-partnership</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--leaf-700)"></span><span class="b2" style="background:var(--deep)"></span><span class="b3" style="background:var(--butter)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 參與支持 ／ <b>大學合作</b></p>
+            <span class="mh-pill" style="background:var(--deep);color:#fff;border-color:var(--deep)">合作方案・University Partnership</span>
+            <h1>把尋路方法，<br>以選修共備嵌入校內課程。</h1>
+            <p class="mh-lead">16 週職涯探索選修嵌入既有課程，從說明會到開課的完整流程都在這一頁。</p>
+            <a class="mh-cta" style="background:var(--path);color:#000">查看合作流程 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:rgba(61,85,39,.09)"></span><span class="cap">專區＝說服，本頁＝方案規格，色系一路承接</span></div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/program-educator</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--deep)"></span><span class="b2" style="background:var(--leaf-700);width:44px"></span><span class="b3" style="background:var(--sun)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 專案計畫 ／ <b>高中教師 SEL 培力</b></p>
+            <span class="mh-pill" style="background:var(--deep);color:#fff;border-color:var(--deep)">教師培力・Educator Development</span>
+            <h1>老師最靠近學生，<br>卻最缺一套能延續的方法。</h1>
+            <p class="mh-lead">以 SEL 為底的教師培力，把陪伴變成課堂裡可反覆使用的系統方法。</p>
+            <a class="mh-cta" style="background:var(--path);color:#000">了解培力方案 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:rgba(61,85,39,.09)"></span><span class="cap">教師培力歸入學校路徑（樹的一部分）</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="block" id="path-company">
+  <div class="wrap">
+    <div class="path-head"><span class="dot" style="background:var(--path)"></span><h2>果實・合作企業路徑</h2></div>
+    <p class="path-meta">for-companies → corporate-partnership → program-corporate｜主色 --path｜⚠ CTA 例外規則：橘色頁的主行動鈕改深綠填色（路徑橙是全站 CTA 色，在橘色頁會沉底）</p>
+    <div class="mockups">
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/for-companies</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--path)"></span><span class="b2" style="background:var(--sunset)"></span><span class="b3" style="background:var(--apricot)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 分眾專區 ／ <b>企業</b></p>
+            <span class="mh-pill" style="background:var(--path)">企業專區・For Companies</span>
+            <h1>企業，是教育的<br>共同建構者。</h1>
+            <p class="mh-lead">真實問題、真實場域與價值創造情境——同時回應 ESG 責任、更早接觸未來人才、深化品牌影響力。</p>
+            <a class="mh-cta" style="background:var(--deep);color:#fff">洽談合作 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:rgba(242,140,10,.13)"></span><span class="cap">CTA＝深綠填色（例外規則），色帶＝路徑橙 tint</span></div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/corporate-partnership</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--sunset)"></span><span class="b2" style="background:var(--path)"></span><span class="b3" style="background:var(--apricot)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 參與支持 ／ <b>企業合作</b></p>
+            <span class="mh-pill" style="background:var(--path)">合作方案・Corporate Partnership</span>
+            <h1>把企業合作從洽談到啟動，<br>整理在這一頁。</h1>
+            <p class="mh-lead">合作不是贊助，是共構——先選擇合作深度，再依四步驟把投入推進到可被看見的影響力。</p>
+            <a class="mh-cta" style="background:var(--deep);color:#fff">填寫洽談表單 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:rgba(242,140,10,.13)"></span><span class="cap">專區結尾唯一 CTA 指向本頁＝漏斗下一層</span></div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/program-corporate</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--path)"></span><span class="b2" style="background:var(--apricot);width:44px"></span><span class="b3" style="background:var(--sunset)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 專案計畫 ／ <b>企業新鮮人共育合作</b></p>
+            <span class="mh-pill" style="background:var(--path)">共育計畫・Corporate Talent Partnership</span>
+            <h1>從校園到職場，中間有一段<br>沒人陪走的斷層。</h1>
+            <p class="mh-lead">課堂知識與企業真實情境之間的落差，用共育合作把斷層接起來。</p>
+            <a class="mh-cta" style="background:var(--deep);color:#fff">了解共育模式 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:rgba(242,140,10,.13)"></span><span class="cap">果實色系一路到底，企業訪客不會迷路</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="block" id="path-donor">
+  <div class="wrap">
+    <div class="path-head"><span class="dot" style="background:var(--sun)"></span><h2>陽光・捐款人路徑</h2></div>
+    <p class="path-meta">for-donors → give｜主色 --sun（大面積）＋ --wheat（線條與底線，同色系深一階保對比）｜行銷語彙：「你是讓這一切發生的陽光」</p>
+    <div class="mockups">
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/for-donors</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--sun)"></span><span class="b2" style="background:var(--wheat)"></span><span class="b3" style="background:var(--butter)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 分眾專區 ／ <b>捐款人</b></p>
+            <span class="mh-pill" style="background:var(--sun)">捐款人專區・For Donors</span>
+            <h1>你的支持，讓更多青年<br>長出選擇的力量。</h1>
+            <p class="mh-lead">每一份小額捐款，都是某位地方青年走上尋路旅程的入場券——你是讓這一切發生的陽光。</p>
+            <a class="mh-cta" style="background:var(--path);color:#000">支持鄉育 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:var(--butter)"></span><span class="cap">色帶直接用鵝黃 --butter（黃系天然是 tint）</span></div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">xiangyu.org/give</span></div>
+        <div class="mini-hero">
+          <div class="mh-decor"><span class="b1" style="background:var(--wheat)"></span><span class="b2" style="background:var(--sun)"></span><span class="b3" style="background:var(--butter)"></span></div>
+          <span class="mh-corner"></span>
+          <div class="mh-copy">
+            <p class="mh-crumb">首頁 ／ 參與支持 ／ <b>支持鄉育</b></p>
+            <span class="mh-pill" style="background:var(--sun)">捐款頁・Support Our Mission</span>
+            <h1>你的一筆捐款，讓更多青年<br>長出選擇的能力。</h1>
+            <p class="mh-lead">用途、管道、常見問題都在這一頁——選一個順手的方式，完成你的支持。</p>
+            <a class="mh-cta" style="background:var(--path);color:#000">立即捐款 →</a>
+          </div>
+        </div>
+        <div class="mh-below"><span class="band" style="background:var(--butter)"></span><span class="cap">give.html 既有敘事弧線最完整，只換色不動結構</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="block" id="preview-w2">
+  <div class="wrap">
+    <p class="sec-eyebrow">05・第二波預告</p>
+    <h2 class="sec-title">共用證據頁＝全光譜＋分眾導流條</h2>
+    <p class="sec-lead">impact、outcomes、partner-voices、reports 屬於四條路徑共同引用的證據頁，維持四色並置（不染單色），並在頁尾用四色導流條把讀者送回自己的路徑——識別元件同時是轉換元件。</p>
+    <div style="border:1px solid var(--line);border-radius:var(--card-radius);padding:26px 28px">
+      <p style="font-weight:700;margin-bottom:4px">這些成果，與你有關。</p>
+      <p style="font-size:.85rem;color:var(--muted)">選擇你的身分，看看下一步可以一起做什麼——</p>
+      <div class="flow-strip">
+        <a href="#" style="background:var(--leaf)">我是大學生<small>加入尋路計畫</small></a>
+        <a href="#" style="background:var(--deep);color:#fff">我是學校老師<small style="color:rgba(255,255,255,.8)">課程共備合作</small></a>
+        <a href="#" style="background:var(--path)">我是企業夥伴<small>共育與 ESG 合作</small></a>
+        <a href="#" style="background:var(--sun)">我想支持鄉育<small>成為那道陽光</small></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="inventory">
+  <div class="wrap">
+    <p class="sec-eyebrow">06・第一波修改清單</p>
+    <h2 class="sec-title">首頁 1 處＋子頁 10 頁，共 11 處</h2>
+    <p class="sec-lead">全部改動集中在一支新增的 theme CSS（沿用既有 class，只加色彩參數層），逐頁可獨立上線、可獨立回退，不動任何既有版型結構。</p>
+    <table style="width:100%;border-collapse:collapse;font-size:.87rem">
+      <thead>
+        <tr style="text-align:left;border-bottom:2px solid var(--deep)">
+          <th style="padding:10px 8px">路徑</th><th style="padding:10px 8px">頁面</th><th style="padding:10px 8px">改動內容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--line)"><td style="padding:9px 8px">首頁</td><td style="padding:9px 8px">index.html #audiences</td><td style="padding:9px 8px">四張路牌 accent／pill 改為生態系四色對應</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="padding:9px 8px"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:var(--leaf);margin-right:6px"></span>嫩芽</td><td style="padding:9px 8px">for-students／programs</td><td style="padding:9px 8px" rowspan="4" >每頁四件事：mini-hero 加入單色系圓角色塊＋金線；h1 升級為價值主張句（原導覽名退到膠囊＋麵包屑）；頁內色帶統一為該路徑 tint；結尾唯一 CTA 指向漏斗下一層</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="padding:9px 8px"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:var(--deep);margin-right:6px"></span>樹</td><td style="padding:9px 8px">for-universities／university-partnership／program-educator</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="padding:9px 8px"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:var(--path);margin-right:6px"></span>果實</td><td style="padding:9px 8px">for-companies／corporate-partnership／program-corporate（CTA 例外：深綠填色）</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="padding:9px 8px"><span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:var(--sun);margin-right:6px"></span>陽光</td><td style="padding:9px 8px">for-donors／give（線條用 --wheat 保對比）</td></tr>
+      </tbody>
+    </table>
+    <p class="note">第二波：impact／outcomes／partner-voices／reports 全光譜化＋導流條。第三波：其餘中性頁 mini-hero 統一、about／involve 去留。所有顏色皆在現行 v3 色彩 allowlist 內，未新增色票。</p>
+  </div>
+</section>
+
+</body>
+</html>
