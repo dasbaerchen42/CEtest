@@ -71,10 +71,12 @@ body.aud-company  .rf-blocks .b3 { background: var(--sunset); }
 body.aud-donor    .rf-blocks .b1 { background: var(--butter); }
 body.aud-donor    .rf-blocks .b2 { background: var(--sun); }
 body.aud-donor    .rf-blocks .b3 { background: var(--wheat); }
-body.aud-neutral .rf-blocks .b1 { background: var(--leaf); }
-body.aud-neutral .rf-blocks .b2 { background: var(--deep); }
-body.aud-neutral .rf-blocks .b3 { background: var(--path); }
-body.aud-neutral .rf-blocks .b4 { left: 20%; bottom: 0; width: 18%; height: 30%; background: var(--sun); }
+/* 中性頁＝全光譜四塊：一字排開、高低錯落、末塊上浮（同提案頁 hero 排法） */
+body.aud-neutral .rf-blocks .b1 { left: 0;   bottom: 0;   width: 21%; height: 58%; background: var(--leaf); }
+body.aud-neutral .rf-blocks .b2 { left: 26%; bottom: 0;   width: 23%; height: 86%; background: var(--deep); }
+body.aud-neutral .rf-blocks .b3 { left: 54%; bottom: 0;   width: 21%; height: 60%; background: var(--path); }
+body.aud-neutral .rf-blocks .b4 { left: 80%; bottom: 42%; width: 18%; height: 34%; background: var(--sun); }
+body.aud-neutral .rf-blocks .rf-goldpath { right: -3%; top: -14%; width: 44%; }
 
 /* ============================================================
    間歇脊線：場景間路徑段＋節點（捲入點亮，reframe.js）
@@ -229,8 +231,8 @@ body.aud-donor .rf-qchip { color: var(--deep); }
 .rf-panel-cta .rf-goldpath { right: 30px; top: 20px; width: 170px; }
 .rf-panel-cta h2 { margin: 0 0 12px; font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: #fff; max-width: calc(100% - 200px); } /* 標題走廊 */
 .rf-panel-cta p { margin: 0 0 26px; max-width: 38em; font-size: 0.95rem; line-height: 1.9; color: rgba(255, 255, 255, 0.85); }
-.rf-panel-cta .rf-hero-actions .button-primary { background: var(--path); border-color: var(--path); color: #10230a; }
-.rf-panel-cta .rf-hero-actions .button-primary:hover, .rf-panel-cta .rf-hero-actions .button-primary:focus-visible { background: var(--wheat); border-color: var(--wheat); color: #10230a; }
+.rf-panel-cta .rf-hero-actions .button-primary { background: var(--path); border-color: var(--path); color: #000; }
+.rf-panel-cta .rf-hero-actions .button-primary:hover, .rf-panel-cta .rf-hero-actions .button-primary:focus-visible { background: var(--wheat); border-color: var(--wheat); color: #000; }
 .rf-panel-cta .rf-hero-actions .button-secondary { background: transparent; border-color: rgba(255, 255, 255, 0.6); color: #fff; }
 .rf-panel-cta .rf-hero-actions .button-secondary:hover, .rf-panel-cta .rf-hero-actions .button-secondary:focus-visible { background: rgba(255, 255, 255, 0.12); color: #fff; }
 @media (max-width: 700px) {
@@ -252,8 +254,8 @@ body.aud-donor .rf-qchip { color: var(--deep); }
 .rf-router .r-donor { background: var(--sun); }
 
 /* ---- 全站主 CTA＝路徑橙填色；企業頁＝深綠例外 ---- */
-.rf .button-primary { background: var(--path); border-color: var(--path); color: #10230a; }
-.rf .button-primary:hover, .rf .button-primary:focus-visible { background: var(--sunset); border-color: var(--sunset); color: #10230a; }
+.rf .button-primary { background: var(--path); border-color: var(--path); color: #000; }
+.rf .button-primary:hover, .rf .button-primary:focus-visible { background: var(--sunset); border-color: var(--sunset); color: #000; }
 body.aud-company .rf .button-primary { background: var(--deep); border-color: var(--deep); color: #fff; }
 body.aud-company .rf .button-primary:hover, body.aud-company .rf .button-primary:focus-visible { background: var(--leaf-700); border-color: var(--leaf-700); color: #fff; }
 
